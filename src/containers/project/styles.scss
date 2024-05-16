@@ -1,0 +1,104 @@
+.portfolio {
+    &__content {
+        padding: 20px;
+        width: 100%;
+
+        &__cards {
+            display: flex;
+            justify-content: space-between; // Pour répartir les images horizontalement
+            gap: 20px; // Espacement entre les images
+            margin-top: 20px; // Marge supplémentaire en haut
+
+            &__item {
+                width: calc(33.33% - 6.67px); // Calcul de la largeur pour 3 éléments sur une ligne
+                max-width: calc(33.33% - 6.67px); // Largeur maximale pour chaque élément
+                border-radius: 10px; // Bord arrondi pour l'image
+                overflow: hidden; // Empêche les images de déborder
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Ombre douce autour de l'image
+
+                img {
+                    width: 100%; // Remplit entièrement le conteneur
+                    height: auto; // Hauteur automatique pour maintenir les proportions
+                    display: block; // Ajuste correctement les marges
+                }
+
+                &__img-wrapper {
+                    position: relative;
+
+                    .image-details {
+                        
+                        padding: 10px;
+                        
+
+                        h3 {
+                            margin-top: 0;
+                            font-size: 3.5rem;
+                            margin-bottom: 10px;
+                            color: var(--yellow-theme-main-color);
+                            text-align: center;
+                        }
+
+                        p {
+                            margin-bottom: 0;
+                            font-size: 1.8rem;
+                            text-align: center;
+                            padding: 0 20px;
+                            color: #fff;
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+
+    }
+}
+
+.portfolio__content__see-more-button {
+    margin-top: 20px; // Ajouter un espacement entre les projets et le bouton
+    margin-left: auto;
+    text-align: center;
+
+    button {
+        cursor: pointer;
+        padding: 10px 70px;
+        font-size: 2rem;
+        background: transparent;
+        color: var(--yellow-theme-main-color);
+        border: 1.5px solid var(--yellow-theme-main-color);
+        border-radius: 4px;
+        font-weight: 500;
+
+        &:hover {
+            background: var(--yellow-theme-main-color);
+            color: #000000;
+        }
+    }
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    
+
+    h2{
+        font-size: 2rem;
+        color: var(--vert);
+    }
+}
+
+.footer-left {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-left: 350px;
+}
+
+.footer-right {
+    text-align: center;
+    margin-right: 450px;
+    font-size: 1.5rem;
+}
