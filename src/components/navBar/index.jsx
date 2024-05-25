@@ -25,7 +25,11 @@ const data = [
     {
         label: 'CONTACT',
         to: '/contact'
-    }
+    },
+    {
+        label: 'INTERNSHIP OFFER',
+        to: '/intership_offer'
+    },
 ]
 
 const Navbar = () => {

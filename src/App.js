@@ -7,6 +7,7 @@ import Project from './containers/project';
 import Skills from './containers/skills';
 import Contact from './containers/contact';
 import Navbar from './components/navBar';
+import Stage from './containers/intership_offer';
 import Particle from './utils.js/particles';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path='/project' element={<Project/>}/>
         <Route path='/skills' element={<Skills/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/intership_offer' element={<Stage/>}/>
       </Routes>
       </div>
 
