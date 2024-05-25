@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion"; 
 import PageHeaderContent from "../../components/PageHeaderContent";
 import ImageOne from '../../images/image1.PNG'
 import ImageTwo from '../../images/image2.PNG'
@@ -54,8 +55,15 @@ const Project = () => {
         }
         return description;
     };
+
     return (
-        <section id="project" className="peoject">
+        <motion.section // Utilisez motion.section au lieu de section
+            id="project"
+            className="peoject"
+            initial={{ opacity: 0 }} // Animation d'apparition initiale
+            animate={{ opacity: 1 }} // Animation lorsque le composant est monté
+            exit={{ opacity: 0 }} // Animation de sortie
+        >
             <PageHeaderContent
                 headerText="My Project"
                 icon={<BsInfoCircleFill size={40} />}
@@ -64,7 +72,13 @@ const Project = () => {
 
                 <div className="portfolio__content__cards">
                     {portfolioData.map((item) => (
-                        <div className="portfolio__content__cards__item" key={item.id}>
+                        <motion.div // Utilisez motion.div pour chaque élément que vous souhaitez animer
+                            className="portfolio__content__cards__item"
+                            key={item.id}
+                            initial={{ opacity: 0, y: 20 }} // Animation d'apparition initiale
+                            animate={{ opacity: 1, y: 0 }} // Animation lorsque le composant est monté
+                            transition={{ duration: 0.5 }}
+                        >
                             <div className="portfolio__content__cards__item__img-wrapper">
                                 <img alt="dummy data" src={item.image} />
                                 <div className="image-details">
@@ -73,18 +87,18 @@ const Project = () => {
                                         <p>{item.description}</p>
                                     ) : (
                                         <>
-                                            <p>{truncateDescription(item.description)}</p>                                            
+                                            <p>{truncateDescription(item.description)}</p>
                                             <p>...</p>
                                         </>
                                     )}
                                     <div style={{ textAlign: "center" }}>
-                                    <button onClick={() => toggleDescription(item.name)}>
-                                        {showFullDescription[item.name] ? "See less" : "See all"}
-                                    </button>
+                                        <button onClick={() => toggleDescription(item.name)}>
+                                            {showFullDescription[item.name] ? "See less" : "See all"}
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
                 <div className="portfolio__content__see-more-button">
@@ -104,7 +118,7 @@ const Project = () => {
                     <p>Email: naimeibtihal@gmail.com</p>
                 </div>
             </footer>
-        </section>
+        </motion.section>
     )
 }
 export default Project;

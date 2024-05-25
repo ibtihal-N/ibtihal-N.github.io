@@ -30,6 +30,14 @@ const data = [
         label: 'INTERNSHIP OFFER',
         to: '/intership_offer'
     },
+    {
+        label: 'GEIW DAYS',
+        to: '/geiw'
+    },
+    {
+        label: 'PROGRESS',
+        to: '/progress'
+    },
 ]
 
 const Navbar = () => {

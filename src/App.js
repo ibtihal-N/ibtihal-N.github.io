@@ -5,6 +5,8 @@ import Home from './containers/home';
 import About from './containers/about';
 import Project from './containers/project';
 import Skills from './containers/skills';
+import Progress from './containers/progress';
+import GEIW from './containers/geiw';
 import Contact from './containers/contact';
 import Navbar from './components/navBar';
 import Stage from './containers/intership_offer';
@@ -40,6 +42,8 @@ function App() {
         <Route path='/skills' element={<Skills/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/intership_offer' element={<Stage/>}/>
+        <Route path='/progress' element={<Progress/>}/>
+        <Route path='/geiw' element={<GEIW/>}/>
       </Routes>
       </div>
 
